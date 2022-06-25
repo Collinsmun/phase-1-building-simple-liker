@@ -3,8 +3,13 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+ let heart = document.getElementById(".like-glyph");
+ function mimic(){
+   mimicServerCall().then((res) => {
+     console(res.jsom)
 
-
+   })
+ }
 
 
 //------------------------------------------------------------------------------
