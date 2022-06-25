@@ -3,8 +3,31 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+ let heart = document.querySelectorAll(".like-glyph");
+ function mimic(e){
+   let heart = e.target;
+   mimicServerCall("url").then(function(res){
+   if(heart.innerText === EMPTY_HEART){
+    heart.innerText = FULL_HEART
+   heart.className = "activated-heart";
+ } else{
+  heart.ineerText = EMPTY_HEART;
+  heart.className = "";
+ }
 
+})
+.catch(function(error) {
+  const modal =document.getElementById("modal");
+  modal.className = "";
+  modal.innerText = error;
+  setTimeout(() => modal.className = "hidden", 30 );
 
+}
+);
+ }
+ for (const glyph of simpleLiker) {
+  glyph.addEventListener("click",likerCallback);
+}
 
 
 //------------------------------------------------------------------------------
